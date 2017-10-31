@@ -1,6 +1,10 @@
 #!/usr/bin/python2
 #-*-coding:utf-8-*-
 
+'''
+这个程序需要在root权限下运行
+'''
+
 import os
 import sys
 
