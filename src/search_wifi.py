@@ -25,6 +25,8 @@ count_8 = 0
 over = False
 #发送的Probe Request帧的数量
 count_sendp = 0
+
+
 #addr2_list = set()
 ssids = {}
 hide_ssids = set()
@@ -81,6 +83,7 @@ def startMonitor(iface):
         print(iface+':尚未开启监听模式')
 
 def searchSSID(iface,subtype):
+    global ssids,hide_ssids
     count = count_8 if subtype == 8 else count_5
     if count == 0:
         return
@@ -197,7 +200,9 @@ class ManagementFrame:
 
 
 if __name__ == '__main__':
+
     handleArgv()
+    
     print('iface:'+iface+' addr:'+addr)
     print('subtype :8 count :'+str(count_8)+'       subtype :5 count :'+str(count_5))
     isExist(iface)
@@ -233,5 +238,5 @@ if __name__ == '__main__':
     ap2sta,sta2ap = mgt.Deauth('f0:b4:29:57:37:d7','10:f6:81:f4:fa:63','f0:b4:29:57:37:d7')
     #print(ap2sta,sta2ap)
     #mgt.startSendpDeauth(True,1,ap2sta_broadcast)
-    mgt.startSendpDeauth(False,1,ap2sta,sta2ap)
+    mgt.startSendpDeauth(False,1,sta2ap,ap2sta)
     '''
