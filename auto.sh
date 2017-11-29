@@ -1,4 +1,5 @@
 #!/bin/bash
+#使用在这个脚本时，在github上显示的注释会带有双引号
 
 dir_full=`pwd`
 dir=`basename $dir_full`
