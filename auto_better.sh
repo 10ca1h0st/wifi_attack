@@ -5,21 +5,8 @@ dir=`basename $dir_full`
 commit=$1
 passwd=$2
 if [ $# -lt 2 ];then
-    echo "Usage:$0 commit passwd [wait_time] [upload_time]"
+    echo "Usage:$0 commit passwd "
     exit
-fi
-if [ -n "$3" ];then
-    time=$3
-else
-    time=4
-    echo "如果此脚本提示 Everything up-to-date，那可能是给git commit的时间不够，请尝试添加第三个参数。"
-fi
-
-if [ -n "$4" ];then
-    upload_time=$4
-else
-    upload_time=20
-    echo "如果总是上传文件失败，那可能是给git push的时间不够，请尝试添加第四个参数。"
 fi
 
 git add .
