@@ -19,7 +19,7 @@ if [ -n "$4" ];then
     upload_time=$4
 else
     upload_time=20
-    echo "如果总是上传文件失败，那可能是给git push的时间太少了，请尝试添加第四个参数。"
+    echo "如果总是上传文件失败，那可能是给git push的时间不够，请尝试添加第四个参数。"
 fi
 
 /usr/bin/expect << EOF
