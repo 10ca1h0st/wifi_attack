@@ -23,7 +23,7 @@ else
 fi
 
 git add .
-git commit -m$commit
+git commit -m"$commit"
 
 /usr/bin/expect << EOF
 set timeout -1
