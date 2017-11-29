@@ -16,7 +16,7 @@ else
 fi
 
 /usr/bin/expect << EOF
-set timeout 20
+set timeout $time
 spawn git add .
 sleep 0.5
 spawn git commit -m"$commit"
